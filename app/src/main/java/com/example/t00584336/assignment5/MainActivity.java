@@ -1,8 +1,11 @@
 package com.example.t00584336.assignment5;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -34,7 +37,18 @@ public class MainActivity extends Activity {
 
                 final ArrayList<Item> elements = new ArrayList<>();
 
-                //pictureview.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,jsonArray));
+                elements.add(new Item("Banana", R.drawable.banana));
+
+                ArrayAdapter<Item> adapter = new ArrayAdapter<Item>(this,android.R.layout.simple_expandable_list_item_1,elements);
+                listView.setAdapter(adapter);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Item i = elements.get(position);
+
+
+                    }
+                });
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -55,5 +69,11 @@ public class MainActivity extends Activity {
             return null;
         }
         return json;
+    }
+
+    public void gotoActivity (View view)
+    {
+        Intent intent = new Intent(this, BananaActivity.class);
+        startActivity(intent);
     }
 }
