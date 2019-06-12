@@ -37,14 +37,60 @@ public class MainActivity extends Activity {
 
                 final ArrayList<Item> elements = new ArrayList<>();
 
-                elements.add(new Item("Banana", R.drawable.banana));
+                elements.add(new Item(R.drawable.banana, "Banana"));
 
                 ArrayAdapter<Item> adapter = new ArrayAdapter<Item>(this,android.R.layout.simple_expandable_list_item_1,elements);
                 listView.setAdapter(adapter);
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Item i = elements.get(position);
+
+                        switch (position)
+                        {
+                            case 0:
+                                Intent intent = new Intent (view.getContext(),BananaActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 1:
+                                intent = new Intent (view.getContext(),BananaActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 2:
+                                intent = new Intent (view.getContext(),BananaActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 3:
+                                intent = new Intent (view.getContext(),BananaActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 4:
+                                intent = new Intent (view.getContext(),BananaActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 5:
+                                intent = new Intent (view.getContext(),BananaActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 6:
+                                intent = new Intent (view.getContext(),BananaActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 7:
+                                intent = new Intent (view.getContext(),BananaActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 8:
+                                intent = new Intent (view.getContext(),BananaActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 9:
+                                intent = new Intent (view.getContext(),BananaActivity.class);
+                                startActivity(intent);
+                                break;
+
+
+
+                        }
 
 
                     }
@@ -69,11 +115,5 @@ public class MainActivity extends Activity {
             return null;
         }
         return json;
-    }
-
-    public void gotoActivity (View view)
-    {
-        Intent intent = new Intent(this, BananaActivity.class);
-        startActivity(intent);
     }
 }

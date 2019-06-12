@@ -3,42 +3,42 @@ package com.example.t00584336.assignment5;
 import android.media.Image;
 
 class Item {
-    private String name;
-    private Image picture;
+    private int id;
+    private String title;
 
-    public Item(String banana, int i)
+    public Item()
     {
         super();
     }
 
-    public Item (String name, Image picture)
+    public Item (int id, String title)
     {
         super();
-        this.name = name;
-        this.picture = picture;
+        this.id = id;
+        this.title = title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public int getid() {
+        return id;
     }
 
-    public Image getPicture() {
-        return picture;
+    public String gettitle() {
+        return title;
     }
 
-    public void setPicture(Image picture) {
-        this.picture = picture;
+    public void settitle(String title) {
+        this.title = title;
     }
 
     @Override
     public String toString() {
         return "Item{" +
-                "name='" + name + '\'' +
-                ", picture=" + picture +
+                "id='" + id + '\'' +
+                ", title=" + title +
                 '}';
     }
 }
