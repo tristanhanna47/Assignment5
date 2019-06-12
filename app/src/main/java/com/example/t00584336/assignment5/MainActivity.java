@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
 
                 ListView listView = (ListView) findViewById(R.id.pictureview);
 
-                final ArrayList<items> elements = new ArrayList<>();
+                final ArrayList<Item> elements = new ArrayList<>();
 
                 //pictureview.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,jsonArray));
             }
