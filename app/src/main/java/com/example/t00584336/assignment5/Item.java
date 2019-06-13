@@ -4,19 +4,42 @@ import android.media.Image;
 
 class Item {
     private String name;
-    private String id;
-    //how to represent image?
+    private String image;
+    private int priority;
+
 
     public Item()
     {
         super();
     }
 
-    public Item (String name, String id)
+    public Item (String name, String image)
     {
         this.name = name;
-        this.id = id;
+        this.image = image;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getImage() {
+        return image;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
 }
