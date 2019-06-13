@@ -1,6 +1,7 @@
 package com.example.t00584336.assignment5;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +23,7 @@ import java.util.LinkedList;
 public class MainActivity extends Activity {
 
     final ArrayList<Item> elements = new ArrayList<>();
+    private MyAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class MainActivity extends Activity {
                 Item item = new Item(jsonObject.getString("name"), jsonObject.getString("image"));
                 elements.add(item);
             }
+            this.adapter = new MyAdapter(this, R.layout.items_list_item, ItemManager.getLoadedItems());
+            setListAdapter(this.adapter);
 
             ListView listView = (ListView) findViewById(R.id.pictureview);
             ArrayAdapter<Item> adapter = new ArrayAdapter<Item>(this,android.R.layout.simple_expandable_list_item_1,elements);
@@ -58,6 +62,10 @@ public class MainActivity extends Activity {
         {
             e.printStackTrace();
         }
+    }
+
+    private void setListAdapter(MyAdapter adapter) {
+
     }
 
     public String loadJSONFromAsset() {

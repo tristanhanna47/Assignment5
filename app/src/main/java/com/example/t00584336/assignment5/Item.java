@@ -1,8 +1,6 @@
 package com.example.t00584336.assignment5;
 
-import android.media.Image;
-
-class Item {
+public class Item {
     private String name;
     private String image;
     private int priority;
